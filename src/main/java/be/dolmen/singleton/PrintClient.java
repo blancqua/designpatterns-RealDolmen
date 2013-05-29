@@ -8,8 +8,7 @@ public class PrintClient {
         BlackAndWhitePrinter blackAndWhitePrinter = new BlackAndWhitePrinter();
         ColorPrinter colorPrinter = new ColorPrinter();
 
-        printSpooler().register(blackAndWhitePrinter);
-        printSpooler().register(colorPrinter);
+        printSpooler().register(blackAndWhitePrinter, colorPrinter);
 
         printSpooler().dispatch(new PrintJob(blackAndWhitePrinter.getId(), "black and white content"));
         printSpooler().dispatch(new PrintJob(colorPrinter.getId(), "color content"));

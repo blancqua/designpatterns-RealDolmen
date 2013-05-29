@@ -21,8 +21,10 @@ public class PrintSpooler {
         return PRINT_SPOOLER;
     }
 
-    public synchronized void register(Printer printer) {
-        registeredPrinters.put(printer.getId(), printer);
+    public synchronized void register(Printer... printers) {
+        for (Printer printer : printers) {
+            registeredPrinters.put(printer.getId(), printer);
+        }
     }
 
     public synchronized void dispatch(PrintJob printJob) {
