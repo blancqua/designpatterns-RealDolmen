@@ -2,6 +2,7 @@ package be.dolmen.adapter;
 
 import org.joda.time.DateMidnight;
 
+// ADAPTEE
 public class Person implements HasBirthDate {
 
     private DateMidnight birthDate;

@@ -3,6 +3,7 @@ package be.dolmen.adapter;
 import static org.joda.time.DateMidnight.now;
 import static org.joda.time.Years.yearsBetween;
 
+// ADAPTER
 public class Voter implements HasAge {
 
     private Person person;
