@@ -12,23 +12,23 @@ import be.dolmen.AbstractTest;
 public class VotingSystemTest extends AbstractTest {
 
     @Mock
-    private Voter voter;
+    private HasAge hasAge;
 
     @TestedObject
     private VotingSystem votingSystem;
 
     @Test
     public void canVote_whenChild() throws Exception {
-        when(voter.getAge()).thenReturn(17);
+        when(hasAge.getAge()).thenReturn(17);
 
-        assertThat(votingSystem.canVote(voter)).isFalse();
+        assertThat(votingSystem.canVote(hasAge)).isFalse();
     }
 
     @Test
     public void canVote_whenAdult() throws Exception {
-        when(voter.getAge()).thenReturn(18);
+        when(hasAge.getAge()).thenReturn(18);
 
-        assertThat(votingSystem.canVote(voter)).isTrue();
+        assertThat(votingSystem.canVote(hasAge)).isTrue();
     }
 
 }

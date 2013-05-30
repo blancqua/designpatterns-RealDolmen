@@ -6,8 +6,8 @@ import org.joda.time.DateMidnight;
 
 public class VotingSystem {
 
-    public boolean canVote(Voter voter) {
-        return voter.getAge() >= 18;
+    public boolean canVote(HasAge hasAge) {
+        return hasAge.getAge() >= 18;
     }
 
     public static void main(String[] args) {
