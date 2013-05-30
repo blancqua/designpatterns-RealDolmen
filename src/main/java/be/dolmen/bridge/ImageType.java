@@ -13,8 +13,8 @@ public enum ImageType {
         this.exporter = exporter;
     }
 
-    public ImageExporter getExporter() {
-        return exporter;
+    public void export(Shape shape) {
+        exporter.export(shape);
     }
 
 }
