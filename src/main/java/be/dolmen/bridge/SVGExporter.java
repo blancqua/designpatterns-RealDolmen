@@ -1,11 +1,11 @@
 package be.dolmen.bridge;
 
 // CONCRETE-IMPLEMENTOR
-public class WebPFormat extends ImageFormat {
+public class SVGExporter extends ImageExporter {
 
     @Override
     public void export(Shape shape) {
-        System.out.println("WebP export " + shape.draw());
+        System.out.println("SVG export " + shape.draw());
     }
 
 }

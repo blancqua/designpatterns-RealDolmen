@@ -5,6 +5,7 @@ import static com.google.common.collect.Maps.newHashMap;
 import java.util.Map;
 import java.util.UUID;
 
+// SINGLETON
 public class PrintSpooler {
 
     private static PrintSpooler PRINT_SPOOLER;

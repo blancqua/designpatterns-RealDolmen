@@ -1,5 +1,6 @@
 package be.dolmen.builder;
 
+// CONCRETE BUILDER
 public class HTMLEmailBuilder implements EmailBuilder<HTMLEmailBuilder> {
 
     private static final String TABLE_ROW = "\t\t<TR><TD>";

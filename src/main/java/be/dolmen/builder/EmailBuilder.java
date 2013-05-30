@@ -1,5 +1,6 @@
 package be.dolmen.builder;
 
+// BUILDER
 public interface EmailBuilder<T extends EmailBuilder<?>> {
 
     T convertFrom(String from);
@@ -10,4 +11,3 @@ public interface EmailBuilder<T extends EmailBuilder<?>> {
     T addFooter();
 
 }
-

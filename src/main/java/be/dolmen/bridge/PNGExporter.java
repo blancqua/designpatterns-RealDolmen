@@ -1,7 +1,7 @@
 package be.dolmen.bridge;
 
 // CONCRETE-IMPLEMENTOR
-public class PNGFormat extends ImageFormat {
+public class PNGExporter extends ImageExporter {
 
     @Override
     public void export(Shape shape) {

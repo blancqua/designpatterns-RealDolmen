@@ -1,11 +1,12 @@
 package be.dolmen.factorymethod;
 
+// CONCRETE PRODUCT
 class Vehicle
-{ 
+{
 
   protected int noPassengers;
   protected String regNo;
-  
+
   public Vehicle(int p, String r)
   {
     noPassengers = p ;
@@ -31,6 +32,6 @@ class Vehicle
   {
     return Ferry.VEHICLE_COST + (Ferry.PASSENGER_COST * noPassengers);
   }
-    
+
 }
 

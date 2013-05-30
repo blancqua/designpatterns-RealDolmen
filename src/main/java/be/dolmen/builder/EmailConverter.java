@@ -1,5 +1,6 @@
 package be.dolmen.builder;
 
+// DIRECTOR
 public class EmailConverter {
 
     private EmailParser parser = new EmailParser();

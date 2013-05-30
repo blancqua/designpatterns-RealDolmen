@@ -1,5 +1,6 @@
 package be.dolmen.builder;
 
+// CONCRETE BUILDER
 public class XMLEmailBuilder implements EmailBuilder<XMLEmailBuilder> {
 
     private StringBuilder result = new StringBuilder();
