@@ -1,11 +1,14 @@
 package be.dolmen.proxy;
 
-import java.util.WeakHashMap;
+import com.google.common.collect.MapMaker;
 
 public class MapProxy implements AbstractMap {
 
     private String fileName;
-    private WeakHashMap<String, String> hashtable = new WeakHashMap<String, String> ();
+    private java.util.Map<String,String> hashtable = new MapMaker()
+                                                                .weakKeys()
+                                                                .weakValues()
+                                                                .makeMap();
 
     private Map map;
 
