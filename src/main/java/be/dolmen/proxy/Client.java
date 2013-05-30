@@ -5,7 +5,7 @@ import java.util.Date;
 public class Client {
 
     private static String fileName;
-    private final static int COUNT = 100000;
+    private final static int COUNT = 1000000;
 
     public static void main (String[] args) {
 

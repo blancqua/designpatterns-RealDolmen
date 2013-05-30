@@ -1,37 +1,52 @@
 package be.dolmen.proxy;
 
-import java.util.HashMap;
+import java.util.WeakHashMap;
 
 public class MapProxy implements AbstractMap {
 
+    private String fileName;
+    private WeakHashMap<String, String> hashtable = new WeakHashMap<String, String> ();
+
+    private Map map;
+
     public MapProxy(String fileName)
     {
-
-
+        this.fileName = fileName;
     }
 
+    @Override
     public String find(String key) throws Exception
     {
-    	// TODO implement method
-    	return null;
+        String value = get(key);
+        if (value == null) {
+            value = map().find(key);
+            put(key, value);
+        }
+
+    	return value;
     }
 
+    private synchronized Map map() {
+        if (map == null) {
+            map = new Map(fileName);
+        }
+        return map;
+    }
+
+    @Override
     public void add(String key, String value) throws Exception
     {
-
-
+        map().add(key, value);
+        put(key, value);
     }
 
-    private String get(String key)
+    private synchronized String get(String key)
     {
-    	return (String) hashtable.get(key);
+    	return hashtable.get(key);
     }
 
-    private void put(String key, String value)
+    private synchronized void put(String key, String value)
     {
     	hashtable.put(key, value);
     }
-
-    private String fileName;
-    private HashMap hashtable = new HashMap();
 }
