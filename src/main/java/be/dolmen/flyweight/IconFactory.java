@@ -1,29 +1,31 @@
 package be.dolmen.flyweight;
 
-import java.util.*;
+import static be.dolmen.flyweight.IconType.iconType;
+import static com.google.common.collect.Maps.newHashMap;
+
+import java.util.Map;
 
 public class IconFactory {
-    private Map iconmap = new HashMap();
 
-    // Singleton.
-    // COMPLETE.
+    private static final IconFactory FACTORY = new IconFactory();
 
+    private Map<IconType, AbstractIcon> cachedIcons = newHashMap();
 
-
-
-
-
-
-    public AbstractIcon createIcon(String key) {
-	// COMPLETE.
-    	return null;
-
-
-
-
-
-
+    public static IconFactory iconFactory() {
+        return FACTORY;
     }
 
-    // Add helper methods here, if any.
+    private IconFactory () {}
+
+    public synchronized AbstractIcon createIcon(String key) {
+        IconType iconType = iconType(key);
+        AbstractIcon icon = cachedIcons.get(iconType);
+        if (icon == null) {
+            icon = iconType.createIcon();
+            cachedIcons.put(iconType, icon);
+        }
+
+        return icon;
+    }
+
 }

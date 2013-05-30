@@ -1,31 +1,15 @@
 package be.dolmen.flyweight;
 
 
-import java.awt.*;
-import javax.swing.*;
-import java.net.URL;
+import javax.swing.ImageIcon;
 
 public class UnknownIcon extends AbstractIcon {
 
-    private final int H = 48;
-    private ImageIcon icon;
+    private ImageIcon icon = new ImageIcon(UnknownIcon.class.getResource("/images/unknown.png"));
 
-
-    // We make this package-visible so that only the corresponding
-    // factory can instantiate us.
-    UnknownIcon() {
-	URL iconURL =
-	    ClassLoader.getSystemResource("images/unknown.png");
-	if (iconURL != null) {
-	    icon = new ImageIcon(iconURL);
-	} else {
-	    System.out.println("Icon images/unknown.png not found");
-	}
+    @Override
+    protected ImageIcon icon(boolean selected) {
+        return icon;
     }
 
-    public void draw(Graphics g, int tx, int ty, String name, boolean sel) {
-        //g.clearRect(tx, ty, icon.getIconWidth(), icon.getIconHeight());
-	icon.paintIcon(null, g, tx, ty);
-        g.drawString(name, tx, ty + H + 15);  //title
-    }
 }
