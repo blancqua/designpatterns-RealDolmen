@@ -4,6 +4,7 @@ import static org.joda.time.DateTimeConstants.DECEMBER;
 
 import org.joda.time.DateMidnight;
 
+// CLIENT
 public class VotingSystem {
 
     public boolean canVote(HasAge hasAge) {
@@ -13,7 +14,7 @@ public class VotingSystem {
     public static void main(String[] args) {
         Person person = new Person(new DateMidnight(1985, DECEMBER, 24));
 
-        System.out.println(new Voter(person).getAge());
+        System.out.println(new HasBirthDateAdapter(person).getAge());
     }
 
 }

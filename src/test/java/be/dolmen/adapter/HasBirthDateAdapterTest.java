@@ -12,27 +12,27 @@ import org.unitils.inject.annotation.TestedObject;
 
 import be.dolmen.AbstractTest;
 
-public class VoterTest extends AbstractTest {
+public class HasBirthDateAdapterTest extends AbstractTest {
 
     private static final int AGE = 21;
 
     @Mock
     @InjectIntoByType
-    private Person person;
+    private HasBirthDate hasBirthDate;
 
     @TestedObject
-    private Voter voter;
+    private HasBirthDateAdapter adapter;
 
     @Before
     public void setUp() {
-        when(person.getBirthDate()).thenReturn(now().minusYears(AGE));
+        when(hasBirthDate.getBirthDate()).thenReturn(now().minusYears(AGE));
 
-        voter = new Voter(person);
+        adapter = new HasBirthDateAdapter(hasBirthDate);
     }
 
     @Test
     public void getAge() throws Exception {
-        assertThat(voter.getAge()).isEqualTo(AGE);
+        assertThat(adapter.getAge()).isEqualTo(AGE);
     }
 
 }
