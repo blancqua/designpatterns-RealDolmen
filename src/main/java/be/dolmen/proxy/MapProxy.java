@@ -7,7 +7,6 @@ public class MapProxy implements AbstractMap {
     private String fileName;
     private java.util.Map<String,String> hashtable = new MapMaker()
                                                                 .weakKeys()
-                                                                .weakValues()
                                                                 .makeMap();
 
     private Map map;
