@@ -26,13 +26,6 @@ public class MapProxy implements AbstractMap {
     	return value;
     }
 
-    private synchronized Map map() {
-        if (map == null) {
-            map = new Map(fileName);
-        }
-        return map;
-    }
-
     @Override
     public void add(String key, String value) throws Exception
     {
@@ -48,5 +41,12 @@ public class MapProxy implements AbstractMap {
     private synchronized void put(String key, String value)
     {
     	hashtable.put(key, value);
+    }
+
+    private synchronized Map map() {
+        if (map == null) {
+            map = new Map(fileName);
+        }
+        return map;
     }
 }
