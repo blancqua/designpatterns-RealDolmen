@@ -5,9 +5,7 @@ import com.google.common.collect.MapMaker;
 public class MapProxy implements AbstractMap {
 
     private String fileName;
-    private java.util.Map<String,String> hashtable = new MapMaker()
-                                                                .weakKeys()
-                                                                .makeMap();
+    private java.util.Map<String,String> hashtable = new MapMaker().weakKeys().makeMap();
 
     private Map map;
 

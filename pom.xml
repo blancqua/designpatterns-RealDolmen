@@ -36,9 +36,9 @@
 			<version>2.2</version>
 		</dependency>
 		<dependency>
-			<groupId>org.mobicents.external.freetts</groupId>
-			<artifactId>freetts</artifactId>
-			<version>1.0</version>
+			<groupId>org.bushe</groupId>
+			<artifactId>eventbus</artifactId>
+			<version>1.4</version>
 		</dependency>
 
 		<dependency>
