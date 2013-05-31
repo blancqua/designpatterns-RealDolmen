@@ -9,7 +9,16 @@ public class Directory extends FileSystemEntry {
     private final Set<FileSystemEntry> entries = newHashSet();
 
     public Directory(String name) {
-        super(name);
+        this(null, name);
+    }
+
+    public Directory(FileSystemEntry parent, String name) {
+        super(parent, name);
+    }
+
+    @Override
+    void add(FileSystemEntry entry) {
+        entries.add(entry);
     }
 
     @Override

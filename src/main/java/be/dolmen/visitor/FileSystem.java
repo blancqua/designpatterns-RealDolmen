@@ -26,4 +26,9 @@ public class FileSystem {
         return visitor.nrOfDirs();
     }
 
+    public void dir() {
+        DirVisitor visitor = new DirVisitor();
+        root.accept(visitor);
+    }
+
 }
