@@ -9,6 +9,12 @@ public class BankAccount {
 
     public void deposit(double amount) {
         state.deposit(amount);
+        /*
+         * Alternatives:
+         * state = state.deposit(amount);
+         * or
+         * state.deposit(this, amount);
+         */
     }
 
     public void withDraw(double amount) {
