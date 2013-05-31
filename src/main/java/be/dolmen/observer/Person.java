@@ -57,6 +57,5 @@ public class Person extends Observable {
     public void notifyObservers() {
         setChanged();
         super.notifyObservers(this);
-        clearChanged();
     }
 }
